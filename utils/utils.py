@@ -42,7 +42,7 @@ def log_dir(args, timestamp=None):
     if timestamp is None:
         timestamp = get_date_time()
 
-    stat = '%s-%s' % (args.expt_name, timestamp)
+    stat = '/%s-%s' % (args.expt_name, timestamp)
 
     log_dir = args.log_dir + '%s' % (args.dataset) + stat
     checkpoint = args.checkpoint_dir + '%s' % (args.dataset) + stat

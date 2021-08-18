@@ -44,23 +44,6 @@ def log_dir(args, timestamp=None):
 
     stat = '%s-%s' % (args.expt_name, timestamp)
 
-    if args.model in ['fsdgpm']:
-        stat = '-%s-%s-%s-%s-%s-' % (args.lr, args.eta1, args.eta2, args.inner_batches, args.thres) + stat
-        stat = '/%s/%s-%s' % (args.model, args.seed, args.memories) + stat
-    elif args.model in ['lamaml']:
-        stat = '-%s-%s-%s-' % (args.alpha_init, args.lr_alpha, args.inner_batches) + stat
-        stat = '/%s/%s-%s' % (args.model, args.seed, args.memories) + stat
-    elif args.model in ['gpm']:
-        stat = '/%s/%s-%s-%s-' % (args.model, args.seed, args.lr, args.thres) + stat
-    elif args.model in ['ER', 'agem']:
-        stat = '/%s/%s-%s-%s-' % (args.model, args.seed, args.memories, args.lr) + stat
-    elif args.model in ['icarl', 'gem']:
-        stat = '/%s/%s-%s-%s-%s-' % (args.model, args.seed, args.memories, args.memory_strength, args.lr) + stat
-    elif args.model in ['ewc']:
-        stat = '/%s/%s-%s-%s-' % (args.model, args.seed, args.memory_strength, args.lr) + stat
-    else:
-        stat = '/%s/%s-%s-' % (args.model, args.seed, args.lr) + stat
-
     log_dir = args.log_dir + '%s' % (args.dataset) + stat
     checkpoint = args.checkpoint_dir + '%s' % (args.dataset) + stat
 

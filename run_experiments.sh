@@ -1,9 +1,6 @@
 #!/bin/bash
 
-#SBATCH --job-name=20C
-#SBATCH --output=/research/d3/drdeng/continual_learning/IDEA/0t.txt
-
-SEED=2
+SEED=0
 
 PMNIST='--dataset mnist_permutations --samples_per_task 1000 --workers 4 --batch_size 10 --n_epochs 1 --glances 5 --mem_batch_size 300 --thres 0.99 --thres_add 0.0005 --cuda'
 CIFAR='--dataset cifar100 --n_tasks 10 --pc_valid 0.05 --batch_size 64 --test_batch_size 64 --n_epochs 50 --mem_batch_size 125 --thres 0.97 --thres_add 0.003 --cuda --second_order --earlystop'

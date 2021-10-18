@@ -1,10 +1,15 @@
 # FS-DGPM
 
-This repository is the official implementation of "[Flattening Sharpness for Dynamic Gradient Projection Memory Benefits Continual Learning](https://arxiv.org/pdf/)".
+This repository is the official implementation of "[Flattening Sharpness for Dynamic Gradient Projection Memory Benefits Continual Learning](https://arxiv.org/pdf/2110.04593.pdf)".
 
 ## Abstract
 
 The backpropagation networks are notably susceptible to catastrophic forgetting, where networks tend to forget previously learned skills upon learning new ones. To address such the 'sensitivity-stability' dilemma, most previous efforts have been contributed to minimizing the empirical risk with different parameter regularization terms and episodic memory, but rarely exploring the usages of the weight loss landscape. In this paper, we investigate the relationship between the weight loss landscape and sensitivity-stability in the continual learning scenario, based on which, we propose a novel method, Flattening Sharpness for Dynamic Gradient Projection Memory (FS-DGPM). In particular, we introduce a soft weight to represent the importance of each basis representing past tasks in GPM, which can be adaptively learned during the learning process, so that less important bases can be dynamically released to improve the sensitivity of new skill learning. We further introduce Flattening Sharpness (FS) to reduce the generalization gap by explicitly regulating the flatness of the weight loss landscape of all seen tasks. As demonstrated empirically, our proposed method consistently outperforms baselines with the superior ability to learn new skills while alleviating forgetting effectively.
+
+## News
+
+2021/10/09 - Our code and paper are released.
+
 
 ## Requisite
 
@@ -49,5 +54,10 @@ source run_experiments.sh
 ## Citation
 
 ```
-
+@article{deng2021flattening,
+  title={Flattening Sharpness for Dynamic Gradient Projection Memory Benefits Continual Learning},
+  author={Deng, Danruo and Chen, Guangyong and Hao, Jianye and Wang, Qiong and Heng, Pheng-Ann},
+  journal={Advances in Neural Information Processing Systems},
+  year={2021}
+}
 ```
